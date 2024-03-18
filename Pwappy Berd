@@ -6,33 +6,33 @@
 console.log("%c displayText.js", "color: blue;");
 
 let player;
+const SCREEN_WIDTH = 700;
+const SCREEN_HEIGHT = 700;
 /*******************************************************/
 // setup()
 /*******************************************************/
 function setup() {
   console.log("setup: ");
-  cnv = new Canvas(700, 500);
-  player = new Sprite(100, 400, 45, 45, 'd');
-  world.gravity.y = 10;
-  floor = new Sprite(460, 500, 1000, 10, 'k');
-  floor.color = 'green';
-  
-  
+  new Canvas(700, 700);
+	player = new Sprite();
+	world.gravity.y = 80;
+	floor = new Sprite (SCREEN_WIDTH/2, SCREEN_HEIGHT, SCREEN_WIDTH, 4, 's');
+	
 }
+
 
 /*******************************************************/
 // draw()
 /*******************************************************/
 function draw() {
-    background('black'); 
-  
-}
+background('black');
 
-function KeyPressed(){
-    
-    if (kb.pressing('space')) {
-        player.velocity.y = -8;
-    }
+	player.speed = 3;
+	
+	if (kb.pressing('space')) {
+		player.vel.y = -8;
+	}
+	
 }
 
 /*******************************************************/
